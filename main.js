@@ -1,35 +1,47 @@
-/* let valorDeseado = parseInt(prompt("ingrese el valor que desea cobrar luego de todos los costos"));
+/* Funciones */
+let cobroLink = (cobroIdeal , diasParaIngresar) => {
+    switch (diasParaIngresar){
+        case "0":
+            impuestos = (cobroIdeal * 0.0599) * 1.21;
+            aCobrar = cobroIdeal + impuestos;
 
-let metodoDePago = prompt("¿Vas a cobrar en? (Escribe '1' para Debito o escribe '2' para Credito");
+            break;
 
+        case "10":
+            impuestos = (cobroIdeal * 0.0399) * 1.21;
+            aCobrar = cobroIdeal + impuestos;
 
-if (metodoDePago == "1" || metodoDePago == "2"){
-    switch (metodoDePago){
-        case "1":
-        console.log("va a Debito")
-        break;
-        case "2" :
-        console.log("va a Credito")
-        break;
+            break;
+
+        case "18":
+            impuestos = (cobroIdeal * 0.0299) * 1.21;
+            aCobrar = cobroIdeal + impuestos;
+
+            break;
+
+        case "35":
+            impuestos = (cobroIdeal * 0.0179) * 1.21;
+            aCobrar = cobroIdeal + impuestos;
+
+            break;
+        default:
+            alert("Los dias ingresados no son válidos, presione F5")
 
     }
+    return aCobrar
 }
- */
-let tuNombre;
 
-do{
-    tuNombre = prompt("Cómo te llamas?")
-} while (!tuNombre && !Number(tuNombre) ) ;
-console.log (tuNombre);
+let cobroCredito
 
-/* 
-const mpQrDebito = 0.0099;
+/* INGRESAR VALOR */
+let cobroIdeal = parseInt(prompt("ingrese el valor que quieres cobrar"));
 
-let costo = mpQrDebito * valorIdeal;
-let costoIva = costo*1.21; 
+let diasParaIngresar = prompt("¿En cuantos días quiere acceder a su dinero? 0 / 10 / 18 / 35");
 
+/* VER QUE NO SEA UN ERROR POR SER STRING O VOLVER A PEDIR*/
 
-
-console.log("El costo es " + costo);
-console.log("El IVA es " + costoIva);
-console.log("El total es " + (valorIdeal + costo + costoIva)); */
+/* EJECUTAR EL CALCULO */
+cobroLink(cobroIdeal, diasParaIngresar);
+console.log("El costo de impuestos es $" + impuestos.toFixed(2));
+console.log("Debes cobrar $" + aCobrar.toFixed(2));
+alert("Debes cobrar $" + aCobrar.toFixed(2))
