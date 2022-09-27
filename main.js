@@ -1,44 +1,25 @@
 /* Funciones */
 
-/* let cobroLink = (cobroIdeal , diasParaIngresar) => {
-    switch (diasParaIngresar){
-        case "0":
-            impuestos = (cobroIdeal * 0.0599) * 1.21;
-            aCobrar = cobroIdeal + impuestos;
-
-            break;
-
-        case "10":
-            impuestos = (cobroIdeal * 0.0399) * 1.21;
-            aCobrar = cobroIdeal + impuestos;
-
-            break;
-
-        case "18":
-            impuestos = (cobroIdeal * 0.0299) * 1.21;
-            aCobrar = cobroIdeal + impuestos;
-
-            break;
-
-        case "35":
-            impuestos = (cobroIdeal * 0.0179) * 1.21;
-            aCobrar = cobroIdeal + impuestos;
-
-            break;
-        default:
-            alert("Los dias ingresados no son válidos, presione F5")
-
-    }
-    return aCobrar
-}
- */
-
 function calcularCosto (monto){
     let diasdecobro = parseInt(prompt("¿En cuantos días quiere acceder a su dinero? 0 / 10 / 18 / 35"));
     let comi = arrayMetodoDeCobro.find(comi => comi.diasdecobro === diasdecobro);
     let indice = arrayMetodoDeCobro.indexOf(comi);
     total = (monto + ((monto * arrayMetodoDeCobro[indice].comision) * 1.21));
+    
+    calculo.innerHTML = "";
+    arrayMetodoDeCobro.forEach ( MetodoDeCobro => {
+        const div = document.createElement("div");
+        div.innerHTML= `
+                        <div>
+                            <p>Costo de ${MetodoDeCobor.nombre}</p>
+                            <p>En ${MetodoDeCobor.diasdecobro} dias de cobro</p>
+                            <p>De comisión tenes ${MetodoDeCobor.}</p>
+                            <p>En total${MetodoDeCobor.nombre}</p>
+                        </div>
+                         `
+        })
     return total;
+    
 }
 
 /* CONSTRUCTOR */
@@ -54,10 +35,10 @@ class MetodoDeCobro{
 
 /* OBJETOS */
 
-const mpLink0 = new MetodoDeCobro ("Crédito y Débido", 0.0599, 0, "mpLink0" )
-const mpLink10 = new MetodoDeCobro ("Crédito y Débido", 0.0399, 10, "mpLink10" )
-const mpLink18 = new MetodoDeCobro ("Crédito y Débido", 0.0299, 18, "mpLink18" )
-const mpLink35 = new MetodoDeCobro ("Crédito y Débido", 0.0179, 35, "mpLink35" )
+const mpLink0 = new MetodoDeCobro ("Crédito y Débido", 0.0599, 0, "Mercado Pago 0 días" )
+const mpLink10 = new MetodoDeCobro ("Crédito y Débido", 0.0399, 10, "Mercado Pago 10 días" )
+const mpLink18 = new MetodoDeCobro ("Crédito y Débido", 0.0299, 18, "Mercado Pago 18 días" )
+const mpLink35 = new MetodoDeCobro ("Crédito y Débido", 0.0179, 35, "Mercado Pago 35 días" )
 
 const arrayMetodoDeCobro = [];
 
@@ -66,19 +47,49 @@ arrayMetodoDeCobro.push(mpLink10);
 arrayMetodoDeCobro.push(mpLink18);
 arrayMetodoDeCobro.push(mpLink35);
 
+const montoAcobrar = document.getElementById("formularioMonto");
 
+/*ARRAY DE LAS RESPUESTAS  */
+const arrayRespuestas = [];
 
-/* INGRESAR VALOR */
-calcularCosto(parseInt(prompt("ingrese el valor que quieres cobrar")));
-alert("debes cobrar " + total.toFixed(2));
+/* Función de boton */
+montoAcobrar.addEventListener("submit", (e) => {
+    e.preventDefault();
+    ingresarDatos();
+    verRespuestas();
+})
 
-/* let diasParaIngresar = prompt("¿En cuantos días quiere acceder a su dinero? 0 / 10 / 18 / 35");
- */
+class calcularCosto{
+    constructor(razon, monto){
+        this.razon = razon;
+        this.monto = monto;
+    }
+}
 
-/* VER QUE NO SEA UN ERROR POR SER STRING O VOLVER A PEDIR*/
+/* Función de tomar valores */
+function ingresarDatos (){
+    const razon = document.getElementById("razon").value;
+    const monto = document.getElementById("monto").value;
+    const nuevaCalculo = new calcularCosto(monto);
+    arrayRespuestas.push(razon, nuevaCalculo);
+    localStorage.setItem("Respuestas", JSON.stringify(arrayRespuestas));
+    montoAcobrar.reset();
 
-/* EJECUTAR EL CALCULO */
-/* cobroLink(cobroIdeal, diasParaIngresar);
-console.log("El costo de impuestos es $" + impuestos.toFixed(2));
-console.log("Debes cobrar $" + aCobrar.toFixed(2));
-alert("Debes cobrar $" + aCobrar.toFixed(2)) */
+}
+function calculo(){
+
+}
+const calculo = document.getElementById("calculo")
+const contenedorRespuestas = document.getElementById("contenedorRespuestas");
+
+function verRespuestas() {
+    arrayRespuestas.forEach (calcularCosto => {
+        contenedorRespuestas.innerHTML = `
+            <div>
+            <p>Razon: ${calcularCosto.razon}</p>
+            <p>Monto: ${calcularCosto.monto}</p>
+
+            </div>
+            `;
+    })
+}

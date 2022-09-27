@@ -11,6 +11,26 @@
     <h2>Función para Débito y Cuotas (ambos costos son iguales en este método)</h2>
     <h3>Para link de pago</h3>
 
+    <form id="formularioMonto" >
+        <label for="razon">Que voy a cobrar</label>
+        <input type="text" id="razon">
+
+        <br><br>
+
+        <label for="monto">Monto</label>
+        <input type="text" id="monto">
+
+        <br><br>
+
+        <input type="submit" value="Calcular">
+
+    </form>
+
+    <div id="calculo"></div>
+
+    <h3>Historial</h3>
+    <div id="contenedorRespuestas"></div>
+
 
 
     <script src="main.js"></script>
