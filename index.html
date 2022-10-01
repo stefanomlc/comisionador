@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
     <title>¿Cuanto cobro?</title>
 </head>
 <body>
@@ -25,15 +27,27 @@
         
                 <br><br>
         
-                <input type="submit" value="Calcular">
-        
+                <input type="submit" class="btn btn-primary" value="Calcular">
+                
             </form>
         
+
+        
+            <h3>Mercado Pago Link</h3>
+            <select id="MPLink" name="Días de pago">
+                <option value="none">No Utilizo</option>
+                <option value="mpLink0D">0 Días</option>
+                <option value="mpLink10D">10 Días</option>
+                <option value="mpLink18D">18 Días</option>
+                <option value="mpLink35D">35 Días</option>
+              </select>
         </div>
+
         <div class="p-3 flex-fill">
             <div id="calculo"></div>
 
             <h3>Historial</h3>
+            <button id="limpiarHistorial" class="btn btn-warning"  value="LIMPIAR HISTORIAL"> LIMPIAR HISTORIAL</button>
             <div id="contenedorRespuestas"></div>
         </div>
       </div>
