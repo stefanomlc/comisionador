@@ -153,6 +153,40 @@ function ingresarMetodoDeCobro() {
 }
 
 
+
+//Revisamos si hay o no algo local y lo tomamos
+
+if(localStorage.getItem("Respuestas")){ //esto da True porque el localStorage es distinto de vacio
+    verHistorial(); //solo tengo que llamar a la otra función
+    const historial = JSON.parse(localStorage.getItem("Respuestas"));
+    console.log(historial)
+    arrayHistorial.push(historial);
+    
+    
+}
+
+//Reviso si hay algo en el Local guardado como método de pago
+/* if(localStorage.getItem("Mercadopago")){
+    console.log("cargamos el método de pago");
+    document.ready = document.getElementById("MPLink").value = localStorage.getItem("Mercadopago");
+} */
+
+const limpiarHistoria = document.getElementById("limpiarHistorial");
+
+limpiarHistoria.addEventListener("click", () => {
+    Toastify({
+        text: "Historial eliminado",
+        duration: 1500,
+        position: "left",
+        gravity: "bottom",
+      }).showToast();
+
+
+    localStorage.removeItem("Respuestas");
+    contenedorRespuestas.innerHTML = "";
+
+});
+
 function verHistorial() {
     const historial = JSON.parse(localStorage.getItem("Respuestas"));
 
@@ -189,32 +223,3 @@ function verHistorial() {
     contenedorRespuestas.innerHTML = aux;
     })
 }
-
-//Revisamos si hay o no algo local y lo tomamos
-
-if(localStorage.getItem("Respuestas")){ //esto da True porque el localStorage es distinto de vacio
-    verHistorial(); //solo tengo que llamar a la otra función
-    const historial = JSON.parse(localStorage.getItem("Respuestas"));
-    console.log(historial)
-    arrayHistorial.push(historial);
-    
-}
-
-//Reviso si hay algo en el Local guardado como método de pago
-/* if(localStorage.getItem("Mercadopago")){
-    console.log("cargamos el método de pago");
-    document.ready = document.getElementById("MPLink").value = localStorage.getItem("Mercadopago");
-} */
-
-const limpiarHistoria = document.getElementById("limpiarHistorial");
-
-limpiarHistoria.addEventListener("click", () => {
-    localStorage.removeItem("Respuestas");
-    contenedorRespuestas.innerHTML = "";
-    Toastify({
-        text: "Historial eliminado",
-        duration: 1500,
-        position: "left",
-        gravity: "bottom",
-      }).showToast();
-});
