@@ -10,17 +10,24 @@ const arrayMetodosSeleccionados = [];
 /* Función de boton */
 montoAcobrar.addEventListener("submit", (e) => {
     e.preventDefault();
+    console.log("el valor es" + document.getElementById("MPLink").value)
+    if(document.getElementById("MPLink").value == "none"){
+        alert("No se seleccionó un método de pago")
+        
+    } else {
     //Importamos datos a calcular
-    ingresarDatos();
+        ingresarDatos();
 
     //importar métodos de cobro seleccionados
-    ingresarMetodoDeCobro();
+        ingresarMetodoDeCobro();
 
     //Proceso de calculo
-    calculo();
+        calculo();
 
     //Creamos el Historial
-    verHistorial();
+        verHistorial();
+    }
+
 })
 
 
@@ -123,6 +130,10 @@ function ingresarMetodoDeCobro() {
     arrayMetodosSeleccionados.push(indexFormaDePago); 
     console.log(arrayMetodosSeleccionados);
 
+    localStorage.setItem("Mercadopago", JSON.stringify(MPLink));
+
+
+
 
 }
 
@@ -173,6 +184,12 @@ if(localStorage.getItem("Respuestas")){ //esto da True porque el localStorage es
     arrayHistorial.push(historial);
     
 }
+
+//Reviso si hay algo en el Local guardado como método de pago
+/* if(localStorage.getItem("Mercadopago")){
+    console.log("cargamos el método de pago");
+    document.ready = document.getElementById("MPLink").value = localStorage.getItem("Mercadopago");
+} */
 
 const limpiarHistoria = document.getElementById("limpiarHistorial");
 
