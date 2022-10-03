@@ -12,9 +12,24 @@ montoAcobrar.addEventListener("submit", (e) => {
     e.preventDefault();
     console.log("el valor es" + document.getElementById("MPLink").value)
     if(document.getElementById("MPLink").value == "none"){
-        alert("No se seleccionó un método de pago")
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: '¡No se seleccionó ningun método de pago!',
+            
+          })
+        //alert("No se seleccionó un método de pago")
         
     } else {
+
+    //Alerta de inicio de cálculo
+        Toastify({
+            text: "Calculo realizado",
+            duration: 3000,
+            position: "left",
+            gravity: "bottom",
+          }).showToast();
+
     //Importamos datos a calcular
         ingresarDatos();
 
@@ -196,4 +211,10 @@ const limpiarHistoria = document.getElementById("limpiarHistorial");
 limpiarHistoria.addEventListener("click", () => {
     localStorage.removeItem("Respuestas");
     contenedorRespuestas.innerHTML = "";
+    Toastify({
+        text: "Historial eliminado",
+        duration: 1500,
+        position: "left",
+        gravity: "bottom",
+      }).showToast();
 });
