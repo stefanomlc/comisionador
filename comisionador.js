@@ -97,6 +97,10 @@ const metodosDeCobro = [
     {metodo: "Credito y Debito", comision: 0.0399, dias: 10, nombre: "Mercado Pago 10 días", codigo: "mpLink10D"},
     {metodo: "Credito y Debito", comision: 0.0299, dias: 18, nombre: "Mercado Pago 18 días", codigo: "mpLink18D"},
     {metodo: "Credito y Debito", comision: 0.0176, dias: 35, nombre: "Mercado Pago 35 días", codigo: "mpLink35D"},
+    {metodo: "Ualá Link", comision: 0.044, dias: 0, nombre: "Ualá link con acreditación al instante", codigo: "ualaLink"},
+    {metodo: "Ualá mPos Debito", comision: 0.029, dias: 0, nombre: "Ualá mPOS Débito con acreditación al instante", codigo: "ualaMposDebito"},
+    {metodo: "Ualá mPos Credito", comision: 0.044, dias: 0, nombre: "Ualá mPOS Credito con acreditación al instante", codigo: "ualaMposCredito"},
+    {metodo: "Ualá QR", comision: 0.06, dias: 0, nombre: "Ualá mPOS Crédito", codigo: "ualaQr"},
 ];
 
 
@@ -143,6 +147,11 @@ function ingresarMetodoDeCobro() {
     //necesito encontrar el valor, sacar el indice y pedir que lo devuelva como un array
     let indexFormaDePago = metodosDeCobro.find(({codigo}) => codigo === MPLink);
     arrayMetodosSeleccionados.push(indexFormaDePago); 
+
+    let uala = document.getElementById("uala").value;
+    let indexUala = metodosDeCobro.find(({codigo}) => codigo === uala);
+    arrayMetodosSeleccionados.push(indexUala); 
+
     console.log(arrayMetodosSeleccionados);
 
     localStorage.setItem("Mercadopago", JSON.stringify(MPLink));

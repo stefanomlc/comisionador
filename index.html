@@ -11,13 +11,18 @@
     <title>¿Cuanto cobro?</title>
 </head>
 <body>
-    <div class="d-flex">
-        <div class="p-2 flex-fill">
-            <h1>Cuanto cobrar con Mercado Pago</h1>
-            <h2>Función para Débito y Cuotas</h2>
-            <h3>Para link de pago</h3>
+    <div class="titulo">
+        <h1>COMISIONADOR</h1>
+        <h2>Calcula cuando debes cobrar</h2>
         
-            <form id="formularioMonto" >
+    </div>
+
+    <div class="d-flex">
+        <div class="p-2 flex-fill mx-5">
+            <h3>Para link de pago</h3>
+
+        
+            <form class="formulario__clase" id="formularioMonto" >
                 <label for="razon">Que voy a cobrar</label>
                 <input type="text" id="razon">
         
@@ -35,16 +40,24 @@
 
         
             <h3>Mercado Pago Link</h3>
-            <select id="MPLink" name="Días de pago">
+            <select class="selector" id="MPLink" name="Días de pago">
                 <option value="none" disable selected>No Utilizo</option>
                 <option value="mpLink0D">0 Días</option>
                 <option value="mpLink10D">10 Días</option>
                 <option value="mpLink18D">18 Días</option>
                 <option value="mpLink35D">35 Días</option>
             </select>
+            <h3>Ualá </h3>
+            <select class="selector" id="uala" name="Días de pago">
+                <option value="none" disable selected>No Utilizo</option>
+                <option value="ualaLink">Link</option>
+                <option value="ualaMposDebito"> MPos Tarjeta Débito</option>
+                <option value="ualaMposCredito">MPos Tarjeta Crédito</option>
+                <option value="ualaQr">Ualá QR</option>
+            </select>
         </div>
 
-        <div class="p-3 flex-fill">
+        <div class="p-2 flex-fill mx-5">
             <div id="calculo"></div>
 
             <h3>Historial</h3>
