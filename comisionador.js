@@ -130,7 +130,8 @@ function calculo(){
 
     
     arrayCalculo.shift(); //esto borra el valor cargado
-    arrayMetodosSeleccionados.shift(); //borramos el valor elegido en el método para que no se repita
+    let l = arrayMetodosSeleccionados.length;
+    arrayMetodosSeleccionados.splice(0,l); //borramos el valor elegido en el método para que no se repita
     arrayRespuestas.shift();
 
 
