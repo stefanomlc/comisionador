@@ -222,7 +222,7 @@ function verHistorial() {
             total = t;
             ;
             
-            aux = aux +
+            aux +=
             `
             <div>
             <p>Método: ${m}</p>
