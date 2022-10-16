@@ -35,7 +35,7 @@ class MetodoDeCobro{
 
 /* OBJETOS */
 
-const mpLink0 = new MetodoDeCobro ("Crédito y Débido", 0.0599, 0, "Mercado Pago 0 días" )
+/* const mpLink0 = new MetodoDeCobro ("Crédito y Débido", 0.0599, 0, "Mercado Pago 0 días" )
 const mpLink10 = new MetodoDeCobro ("Crédito y Débido", 0.0399, 10, "Mercado Pago 10 días" )
 const mpLink18 = new MetodoDeCobro ("Crédito y Débido", 0.0299, 18, "Mercado Pago 18 días" )
 const mpLink35 = new MetodoDeCobro ("Crédito y Débido", 0.0179, 35, "Mercado Pago 35 días" )
@@ -45,7 +45,9 @@ const arrayMetodoDeCobro = [];
 arrayMetodoDeCobro.push(mpLink0);
 arrayMetodoDeCobro.push(mpLink10);
 arrayMetodoDeCobro.push(mpLink18);
-arrayMetodoDeCobro.push(mpLink35);
+arrayMetodoDeCobro.push(mpLink35); */
+
+
 
 const montoAcobrar = document.getElementById("formularioMonto");
 

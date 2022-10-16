@@ -92,16 +92,22 @@ class ClaseHistorial{
     }
 }
 
-const metodosDeCobro = [
-    {metodo: "Credito y Debito", comision: 0.0599, dias: 0, nombre: "Mercado Pago 0 días", codigo: "mpLink0D"},
-    {metodo: "Credito y Debito", comision: 0.0399, dias: 10, nombre: "Mercado Pago 10 días", codigo: "mpLink10D"},
-    {metodo: "Credito y Debito", comision: 0.0299, dias: 18, nombre: "Mercado Pago 18 días", codigo: "mpLink18D"},
-    {metodo: "Credito y Debito", comision: 0.0176, dias: 35, nombre: "Mercado Pago 35 días", codigo: "mpLink35D"},
-    {metodo: "Ualá Link", comision: 0.044, dias: 0, nombre: "Ualá link con acreditación al instante", codigo: "ualaLink"},
-    {metodo: "Ualá mPos Debito", comision: 0.029, dias: 0, nombre: "Ualá mPOS Débito con acreditación al instante", codigo: "ualaMposDebito"},
-    {metodo: "Ualá mPos Credito", comision: 0.044, dias: 0, nombre: "Ualá mPOS Credito con acreditación al instante", codigo: "ualaMposCredito"},
-    {metodo: "Ualá QR", comision: 0.06, dias: 0, nombre: "Ualá mPOS Crédito", codigo: "ualaQr"},
-];
+
+
+//JSON cargamos los valores y ponemos en un Array
+const jsonMetodosDeCobro = "json/metodosdepago.json";
+const metodosDeCobro = [];
+
+fetch(jsonMetodosDeCobro)
+    .then(respuesta => respuesta.json())
+    .then(datos =>{
+        datos.forEach( metodo =>{
+            metodosDeCobro.push(metodo)
+        })
+    })
+    .catch(error => console.log(error))
+    .finally(() => console.log("Carga de métodos de cobro terminada"));
+
 
 
 function calculo(){

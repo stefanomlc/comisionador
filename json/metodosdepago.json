@@ -1,0 +1,23 @@
+[
+    {"metodo": "Mercado Pago Link Credito y Debito", "comision": 0.0599, "dias": 0, "nombre": "Mercado Pago 0 días", "codigo": "mpLink0D"},
+    {"metodo": "Mercado Pago Link Credito y Debito", "comision": 0.0399, "dias": 10, "nombre": "Mercado Pago 10 días", "codigo": "mpLink10D"},
+    {"metodo": "Mercado Pago Link Credito y Debito", "comision": 0.0299, "dias": 18, "nombre": "Mercado Pago 18 días", "codigo": "mpLink18D"},
+    {"metodo": "Mercado Pago Link Credito y Debito", "comision": 0.0176, "dias": 35, "nombre": "Mercado Pago 35 días", "codigo": "mpLink35D"},
+    {"metodo": "Ualá Link", "comision": 0.044, "dias": 0, "nombre": "Ualá link con acreditación al instante", "codigo": "ualaLink"},
+    {"metodo": "Ualá mPos Debito", "comision": 0.029, "dias": 0, "nombre": "Ualá mPOS Débito con acreditación al instante", "codigo": "ualaMposDebito"},
+    {"metodo": "Ualá mPos Credito", "comision": 0.044, "dias": 0, "nombre": "Ualá mPOS Credito con acreditación al instante", "codigo": "ualaMposCredito"},
+    {"metodo": "Ualá QR", "comision": 0.006, "dias": 0, "nombre": "Ualá mPOS Crédito", "codigo": "ualaQr"},
+    {"metodo": "Pay Way en el Acto", "comision": 0.008, "dias": 0, "nombre": "Payway en el acto", "codigo": "payway0D"},
+    {"metodo": "Pay Way 1 Día Debito", "comision": 0.008, "dias": 1, "nombre": "Payway pago debitdo en un dia", "codigo": "payway1DD"},
+    {"metodo": "Pay Way 1 Día Credito Nacional", "comision": 0.0511, "dias": 1, "nombre": "Payway pago credito en un dia", "codigo": "payway1DC"},
+    {"metodo": "Pay Way 1 Día Crédito Ext y Prepagas", "comision": 0.0985, "dias": 1, "nombre": "Payway pago debitdo con crédito extranjeras y prepagas en un dia", "codigo": "payway1DEx"},
+    {"metodo": "Pay Way 8 Días Crédito Nacional", "comision": 0.018, "dias": 8, "nombre": "Payway pago con credito nacional en 8 dias", "codigo": "payway8DC"},
+    {"metodo": "Pay Way 18 Días Crédito Ext y Prepagas", "comision": 0.018, "dias": 18, "nombre": "Payway pago debitdo con crédito extranjeras y prepagas", "codigo": "payway18DEx"},
+    {"metodo": "Naranja Toque 1 dia Debito", "comision": 0.0315, "dias": 1, "nombre": "Naranja toque pago en un día con débito", "codigo": "Naranja1DD"},
+    {"metodo": "Naranja Toque 1 dia Credito", "comision": 0.0579, "dias": 1, "nombre": "Naranja toque pago en un día con Credito", "codigo": "Naranja1DC"},
+    {"metodo": "Naranja Toque 14 dia Credito", "comision": 0.0339, "dias": 14, "nombre": "Naranja toque pago en 14 días con Credito", "codigo": "Naranja14DC"},
+    {"metodo": "Naranja Toque 60 dia Credito", "comision": 0, "dias": 60, "nombre": "Naranja toque pago en 60 días con Credito", "codigo": "Naranja60DC"},
+    {"metodo": "MODO Pago con Transferencia", "comision": 0.008, "dias": 0, "nombre": "Pago con tranferencia al instante en MODO", "codigo": "Modo0DT"},
+    {"metodo": "MODO Pago con Debito", "comision": 0.008, "dias": 1, "nombre": "Pago con Débito en MODO acreditado en 1 día", "codigo": "Modo0DD"},
+    {"metodo": "MODO Pago con Credito", "comision": 0.018, "dias": 8, "nombre": "Pago con Credito en MODO acreditado en 8 días", "codigo": "Modo0DC"}
+]
