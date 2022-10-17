@@ -119,7 +119,7 @@ function calculo(){
 
     //Método funcionado
     //for (const {comision: c, nombre: i } of metodosDeCobro){
-    
+    console.log(arrayMetodosSeleccionados)
     for (const {comision: c, nombre: i } of arrayMetodosSeleccionados){
         
         let costoComision = ((monto * c) * 1.21);
