@@ -4,16 +4,17 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: 'Silkscreen', cursive; }
 
 /* helpers */
 html {
   font-size: 62.5%;
-  background-color: #F2D7D9;
+  background-color: #5e95fa;
   padding: 0; }
 
 body {
-  background-color: #F2D7D9; }
+  background-color: #5e95fa; }
 
 h1 {
   font-size: 5rem; }
@@ -37,33 +38,88 @@ p {
   padding: 0%;
   margin: 0%; }
 
+.text-white {
+  color: #ffffff; }
+
 .titulo {
-  text-align: center; }
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  background-color: #c84d0a; }
   .titulo h1 {
-    margin-top: 5vh;
+    align-items: center;
+    margin-top: 1vh;
     margin-bottom: 3px; }
   .titulo h2 {
+    padding-bottom: 15px;
     margin-bottom: 2vh; }
 
+h3 {
+  margin-left: 10px;
+  margin-top: 10px; }
+
+h4 {
+  margin-left: 10px; }
+
+p {
+  margin-left: 10px; }
+
+.coin {
+  margin: 35px;
+  width: 180px;
+  height: auto;
+  background-color: #c84d0a; }
+
 .formulario__clase {
-  font-size: 18px; }
+  font-size: 18px;
+  display: flex;
+  flex-direction: column; }
+  .formulario__clase input {
+    margin-bottom: 8px;
+    margin-left: 10px;
+    margin-right: 10px; }
+  .formulario__clase label {
+    margin-top: 7px;
+    margin-left: 10px; }
 
 .selector {
-  font-size: 18px; }
+  font-size: 18px;
+  margin-left: 10px;
+  width: 350px; }
 
 .btn-primary {
-  background: #9CB4CC;
+  background: #c84d0a;
   border: 0px;
   color: white;
-  font-size: 1.4em;
+  font-size: 2rem;
   --bs-btn-hover-bg: $thirt;
-  --bs-btn-hover-border-color: none; }
+  --bs-btn-hover-border-color: none;
+  max-width: 150px;
+  margin: 10px; }
 
 .btn-warning {
-  background-color: #9CB4CC;
+  background-color: #c84d0a;
   border: 0px;
   color: white;
-  font-size: 1.4em;
+  font-size: 2rem;
   --bs-btn-hover-color: $accent;
   --bs-btn-hover-bg: $thirt;
-  --bs-btn-hover-border-color: none; }
+  --bs-btn-hover-border-color: none;
+  max-width: 150px;
+  margin: 10px; }
+
+.columnas {
+  margin: 50px;
+  max-width: 500px;
+  background-color: #ffffff; }
+
+@media screen and (max-width: 700px) {
+  .d-flex {
+    flex-direction: column;
+    align-items: center; } }
+
+@media screen and (max-width: 425px) {
+  h1 {
+    font-size: 3rem; }
+  h2 {
+    font-size: 2rem; } }

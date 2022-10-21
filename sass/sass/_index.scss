@@ -1,0 +1,99 @@
+.titulo{
+   
+    align-items: center;
+    text-align: center;
+    color: $white;
+    background-color: $secondary;
+
+    
+
+    h1{
+        align-items: center;
+        margin-top: 1vh;
+        margin-bottom: 3px;
+        
+
+    }
+    h2{
+        padding-bottom: 15px;
+        margin-bottom: 2vh;
+
+
+
+    }
+    
+}
+
+h3{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+h4{
+    margin-left: 10px;
+}
+
+p{
+    margin-left: 10px;
+}
+
+.coin{
+    margin: 35px;
+    width: 180px;
+    height: auto;
+    background-color: $secondary;
+}
+.formulario__clase{
+    
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    & input {
+        margin-bottom: 8px;
+        margin-left: 10px;
+        margin-right: 10px;
+        
+    }
+    & label{
+        margin-top: 7px;
+        margin-left: 10px;
+    }
+
+}
+
+.selector {
+    font-size: 18px;
+    margin-left: 10px;
+    width: 350px;
+
+}
+
+.btn-primary{
+    background: $secondary;
+    border: 0px;
+    color: white;
+    font-size: 2rem;
+    --bs-btn-hover-bg: $thirt;
+    --bs-btn-hover-border-color: none;
+    max-width: 150px;
+    margin: 10px;
+    
+}
+
+
+.btn-warning{
+    background-color: $secondary;
+    border: 0px;
+    color: white;
+    font-size: 2rem;
+    --bs-btn-hover-color: $accent;
+    --bs-btn-hover-bg: $thirt;
+    --bs-btn-hover-border-color: none;
+    max-width: 150px;
+    margin: 10px;
+}
+
+.columnas {
+    margin: 50px ;
+    max-width: 500px;
+    background-color: $white;
+}

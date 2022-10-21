@@ -28,6 +28,7 @@ montoAcobrar.addEventListener("submit", (e) => {
             duration: 3000,
             position: "left",
             gravity: "bottom",
+            backgroundColor: "#c84d0a",
           }).showToast();
 
     //Importamos datos a calcular
@@ -152,12 +153,36 @@ function ingresarMetodoDeCobro() {
     console.log(MPLink); //Resultado MPLink
 
     //necesito encontrar el valor, sacar el indice y pedir que lo devuelva como un array
-    let indexFormaDePago = metodosDeCobro.find(({codigo}) => codigo === MPLink);
-    arrayMetodosSeleccionados.push(indexFormaDePago); 
+   
+    if (MPLink != "false"){
+        let indexFormaDePago = metodosDeCobro.find(({codigo}) => codigo === MPLink);
+        arrayMetodosSeleccionados.push(indexFormaDePago); 
+    }
+
 
     let uala = document.getElementById("uala").value;
-    let indexUala = metodosDeCobro.find(({codigo}) => codigo === uala);
-    arrayMetodosSeleccionados.push(indexUala); 
+    if (uala != "false"){
+        let indexUala = metodosDeCobro.find(({codigo}) => codigo === uala);
+        arrayMetodosSeleccionados.push(indexUala); 
+    }
+    //PAYWAY
+    let payway = document.getElementById("payway").value;
+    if (payway != "false"){
+        let aux = metodosDeCobro.find(({codigo}) => codigo === payway);
+        arrayMetodosSeleccionados.push(aux); 
+    }
+    //NARANJA
+    let naranja = document.getElementById("naranja").value;
+    if (naranja != "false"){
+        let aux = metodosDeCobro.find(({codigo}) => codigo === naranja);
+        arrayMetodosSeleccionados.push(aux); 
+    }
+    //MODO
+    let modo = document.getElementById("modo").value;
+    if (modo != "false"){
+        let aux = metodosDeCobro.find(({codigo}) => codigo === modo);
+        arrayMetodosSeleccionados.push(aux); 
+    }
 
     console.log(arrayMetodosSeleccionados);
 
@@ -195,6 +220,8 @@ limpiarHistoria.addEventListener("click", () => {
         duration: 1500,
         position: "left",
         gravity: "bottom",
+        backgroundColor: "#0f7d25",
+        
       }).showToast();
 
 
