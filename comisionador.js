@@ -65,7 +65,7 @@ function ingresarDatos (){
     //console.log(arrayRespuestas); //borrar
     
 
-    montoAcobrar.reset();
+    
 
 }
 
