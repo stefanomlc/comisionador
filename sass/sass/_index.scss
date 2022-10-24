@@ -69,6 +69,7 @@ p{
     font-size: 2rem;
     --bs-btn-hover-bg: $thirt;
     --bs-btn-hover-border-color: none;
+    --bs-btn-hover-color: $accent;
     max-width: 150px;
     margin: 10px;
     
@@ -91,4 +92,25 @@ p{
     margin: 50px ;
     max-width: 500px;
     background-color: $white;
+}
+
+
+.swal2-styled.swal2-confirm {
+    border: 0;
+    border-radius: 0.25em;
+    background: initial;
+    background-color: $secondary;
+    color: #fff;
+    font-size: 1em;
+}
+
+.btn-primary {
+    background: #c84d0a;
+    border: 0px;
+    color: white;
+    font-size: 2rem;
+    --bs-btn-hover-bg: $thirt;
+    --bs-btn-hover-border-color: none;
+    max-width: 150px;
+    margin: 10px;
 }

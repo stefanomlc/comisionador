@@ -18,7 +18,7 @@ montoAcobrar.addEventListener("submit", (e) => {
             text: '¡No se seleccionó ningun método de pago!',
             
           })
-        //alert("No se seleccionó un método de pago")
+        
         
     } else {
 
@@ -62,7 +62,6 @@ function ingresarDatos (){
     arrayRespuestas.push(razon);
     arrayCalculo.push(monto);
 
-    //console.log(arrayRespuestas); //borrar
     
 
     
@@ -118,9 +117,9 @@ function calculo(){
 
     const arrayCostos = [];
 
-    //Método funcionado
-    //for (const {comision: c, nombre: i } of metodosDeCobro){
-    console.log(arrayMetodosSeleccionados)
+     
+
+
     for (const {comision: c, nombre: i } of arrayMetodosSeleccionados){
         
         let costoComision = ((monto * c) * 1.21);
@@ -132,25 +131,33 @@ function calculo(){
     }
 
     const aux = new ClaseHistorial (razon, arrayCostos);
-    arrayHistorial.unshift(aux);
-   
-
     
+    console.log(arrayHistorial);
+    
+    arrayHistorial.unshift(aux);
+        
     arrayCalculo.shift(); //esto borra el valor cargado
     let l = arrayMetodosSeleccionados.length;
     arrayMetodosSeleccionados.splice(0,l); //borramos el valor elegido en el método para que no se repita
     arrayRespuestas.shift();
 
 
-    localStorage.setItem("Respuestas", JSON.stringify(arrayHistorial));
+    localStorage.setItem("Respuestas", JSON.stringify(arrayHistorial)); //publica el historial en el LocalStorage
 
 
 }
 
 function ingresarMetodoDeCobro() {
     let MPLink = document.getElementById("MPLink").value;
+    let uala = document.getElementById("uala").value;
+    let payway = document.getElementById("payway").value;
+    let naranja = document.getElementById("naranja").value;
+    let modo = document.getElementById("modo").value;
+    console.log(MPLink);
     
-    console.log(MPLink); //Resultado MPLink
+    //Ternario para revisar métodos activados
+    (MPLink == "false") && (uala == "false") && (payway == "false") && (naranja == "false") && (modo == "false") ? 
+    Swal.fire('No hay métodos de pago seleccionados') : console.log ("iniciamos el calculo"); 
 
     //necesito encontrar el valor, sacar el indice y pedir que lo devuelva como un array
    
@@ -158,33 +165,29 @@ function ingresarMetodoDeCobro() {
         let indexFormaDePago = metodosDeCobro.find(({codigo}) => codigo === MPLink);
         arrayMetodosSeleccionados.push(indexFormaDePago); 
     }
-
-
-    let uala = document.getElementById("uala").value;
+    //AULA
     if (uala != "false"){
         let indexUala = metodosDeCobro.find(({codigo}) => codigo === uala);
         arrayMetodosSeleccionados.push(indexUala); 
     }
-    //PAYWAY
-    let payway = document.getElementById("payway").value;
+
+    //PAYWAY    
     if (payway != "false"){
         let aux = metodosDeCobro.find(({codigo}) => codigo === payway);
         arrayMetodosSeleccionados.push(aux); 
     }
-    //NARANJA
-    let naranja = document.getElementById("naranja").value;
+
+    //NARANJA    
     if (naranja != "false"){
         let aux = metodosDeCobro.find(({codigo}) => codigo === naranja);
         arrayMetodosSeleccionados.push(aux); 
     }
-    //MODO
-    let modo = document.getElementById("modo").value;
+
+    //MODO    
     if (modo != "false"){
         let aux = metodosDeCobro.find(({codigo}) => codigo === modo);
         arrayMetodosSeleccionados.push(aux); 
     }
-
-    console.log(arrayMetodosSeleccionados);
 
     localStorage.setItem("Mercadopago", JSON.stringify(MPLink));
 
@@ -199,18 +202,12 @@ function ingresarMetodoDeCobro() {
 
 if(localStorage.getItem("Respuestas")){ //esto da True porque el localStorage es distinto de vacio
     verHistorial(); //solo tengo que llamar a la otra función
-    const historial = JSON.parse(localStorage.getItem("Respuestas"));
-    console.log(historial)
-    arrayHistorial.push(historial);
+    console.log("Historial cargado");
     
     
 }
 
-//Reviso si hay algo en el Local guardado como método de pago
-/* if(localStorage.getItem("Mercadopago")){
-    console.log("cargamos el método de pago");
-    document.ready = document.getElementById("MPLink").value = localStorage.getItem("Mercadopago");
-} */
+
 
 const limpiarHistoria = document.getElementById("limpiarHistorial");
 
@@ -224,18 +221,22 @@ limpiarHistoria.addEventListener("click", () => {
         
       }).showToast();
 
-
+    //limpio el storage
     localStorage.removeItem("Respuestas");
     contenedorRespuestas.innerHTML = "";
+    //limpio el historial para que no se siga cargando
+    let l = arrayHistorial.length;
+    arrayHistorial.splice(0,l);
 
 });
 
 function verHistorial() {
     const historial = JSON.parse(localStorage.getItem("Respuestas"));
-
+    console.log("vemos el historial")
+    console.log(historial)
     let aux = "";
     
-    historial.forEach (rta => {
+   historial.forEach (rta => {
       
         aux += `
         <div>
@@ -254,15 +255,17 @@ function verHistorial() {
             <div>
             <p>Método: ${m}</p>
             <p>Costo de la comisión: ${c}</p>
-            <p>Total: ${t}</p>
+            <p>Total: ${total}</p>
 
             </div>
             `
             ;
-        
+            
         }
         
 
     contenedorRespuestas.innerHTML = aux;
-    })
+    }) 
+
 }
+
